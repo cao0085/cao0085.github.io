@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Install Jeykll step by step"
 date:   2024-08-07 23:56:28 +0800
 categories: jekyll update
 ---
