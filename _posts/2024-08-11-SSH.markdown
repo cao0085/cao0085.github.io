@@ -8,6 +8,8 @@ categories: jekyll update
 今天的目標是"初步體驗"SSH，花個幾十分鐘找了SSH大多都是名詞介紹滿模糊的
 最後翻到這個很讚的介紹，看完後就滿有概念的了
 https://www.youtube.com/watch?v=_TixdHlCMu4
+https://www.youtube.com/watch?v=0Sffl7YO0aY
+
 
 
 再來就是實際操作，一開始是想用Google Cloud當作練習但付款認證滿嚴格的，改使用docker來試試。
