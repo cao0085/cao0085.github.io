@@ -2,7 +2,7 @@
 layout: post
 title:  "SSH"
 date:   2024-08-07 23:56:28 +0800
-categories: jekyll update
+categories: setup-basics
 ---
 
 今天的目標是"初步體驗"SSH，花個幾十分鐘找了SSH大多都是名詞介紹滿模糊的

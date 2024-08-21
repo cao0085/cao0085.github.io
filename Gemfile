@@ -23,6 +23,7 @@ end
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", ">= 1", "< 3"
   gem "tzinfo-data"
+end
 
 
 # Performance-booster for watching directories on Windows
@@ -36,4 +37,3 @@ gem 'jekyll-admin', group: :jekyll_plugins
 
 gem "webrick", "~> 1.8"
 gem "rack", "~> 2.2"
-

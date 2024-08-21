@@ -2,7 +2,7 @@
 title: How to Install Jekyll Step by Step with ChatGPT
 layout: post
 date: '2024-08-07 23:56:28 +0800'
-categories: jekyll update
+categories: setup-basics
 ---
 
 <br>
