@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/medium-style.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/medium-style.css">
 </head>
 
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="{{ "/" | relative_url }}">Recent Posts</a></li>
-                <li><a href="{{ "/categories/setup-basics/" | relative_url }}">Setup & Basics</a></li>
-                <li><a href="{{ "/categories/code-notes/" | relative_url }}">Code Notes</a></li>
-                <li><a href="{{ "/categories/algorithm-leetcode/" | relative_url }}">Algorithm & LeetCode</a></li>
+                <li><a href="{{ site.baseurl }}/">Recent Posts</a></li>
+                <li><a href="{{ site.baseurl }}/categories/setup-basics/">Setup & Basics</a></li>
+                <li><a href="{{ site.baseurl }}/categories/code-notes/">Code Notes</a></li>
+                <li><a href="{{ site.baseurl }}/categories/algorithm-leetcode/">Algorithm & LeetCode</a></li>
             </ul>
         </nav>
     </header>
