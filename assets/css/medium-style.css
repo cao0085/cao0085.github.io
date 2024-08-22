@@ -1,14 +1,77 @@
-/* Reset and base styles */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
+/* 整體環境 */
+body {
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* 外邊距和內邊距、先統一設定 0 */
+h1,h2,h3,h4,h5,h6,
+p,ul,ol {
+    margin:1px;
+    padding: 3px;;
+}
+
+
+
+/* 文章字體設置 */
+h1 {
+    color: #0b0b0b;
+    /* font-family: 'Merriweather', serif; */
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+h3 {
+    color: #0b0b0b;
+    margin-bottom: 5px;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-top: 16px;
+    margin-bottom: 5px;
+    padding: 5px;;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+/* 目錄導覽列設置 */
+header nav ul li a {
+    font-size: 23px; /* 調整字體大小 */
+    font-weight: bold; /* 如果你希望文字加粗 */
+    color: #282828;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+/* 預覽時效果 */
+nav ul li a:hover {
+    background-color: #d9d9d9; /* 當鼠標懸停時，背景顏色變為 #d1d0d0 */
+    border-radius: 3px; /* 當鼠標懸停時，設置圓角半徑為 5 像素 */
+}
+
+
+
+
+/* 文章標題對應到MD檔案的title */
+header {
+    padding: 40px 0;
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 20px;
+}
+
+
 li {
     margin: 0;
     padding: 0;
@@ -16,22 +79,18 @@ li {
     list-style: none;
 }
 
-body {
-    font-family: 'Georgia', serif;
-    font-size: 18px;
-    line-height: 1.7;
-    color: #333;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+li a {
+    font-size: 18px; /* 調整文字大小 */
+    font-weight: bold; /* 如果你希望文字加粗，可以添加這一行 */
+    color: #333; /* 文字顏色 */
 }
 
-header {
-    background-color: #fff;
-    padding: 20px 0;
-    border-bottom: 1px solid #e1e1e1;
-    margin-bottom: 30px;
+/* 當滑鼠懸停時，文字變色 */
+li a:hover {
+    color: #000; 
 }
+
+
 
 nav ul {
     display: flex;
@@ -44,53 +103,13 @@ nav ul li {
     margin: 0 20px;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 10px 15px;
-    border-radius: 5px;
-}
-
-nav ul li a:hover {
-    background-color: #f4f4f4;
-    color: #000;
-}
 
 .page-content {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1,
-h2,
-h3 {
-    font-family: 'Merriweather', serif;
-    color: #2c3e50;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 36px;
-    line-height: 1.2;
-}
-
-h2 {
-    font-size: 28px;
-    line-height: 1.3;
-}
-
-h3 {
-    font-size: 24px;
-    line-height: 1.4;
-}
-
-p {
-    margin-bottom: 20px;
 }
 
 a {
@@ -98,9 +117,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
 
 footer {
     text-align: center;
@@ -114,4 +130,25 @@ footer {
 
 footer a {
     color: #3498db;
+}
+/* 文章頁設定寬度 */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+
+/* 後來加的 */
+br {
+    line-height: 0.3; /* 調整此值來控制 `<br>` 的高度，1 表示正常行高 */
+}
+
+/* code反灰 */
+pre code {
+    background-color: #acaaaa; /* 背景顏色 */
+    padding: 8px; /* 內邊距 */
+    border-radius: 5px; /* 圓角 */
+    font-family: monospace; /* 等寬字體 */
 }
