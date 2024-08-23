@@ -1,6 +1,17 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: default
 ---
+
+<ul>
+  <br>
+  {% for post in site.posts %}
+    <li style="margin-bottom: 20px;">
+      <a href="{{ post.url | relative_url }}" style="font-size: 25px; font-weight: bold; display: block;">
+        {{ post.title }}
+      </a>
+      <span style="font-size: 14px; color: #888; display: block; margin-top: 2px;">
+        {{ post.date | date: "%Y-%m-%d" }}
+      </span>
+    </li>
+  {% endfor %}
+  </ul>

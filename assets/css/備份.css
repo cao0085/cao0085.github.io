@@ -1,31 +1,4 @@
-
 /* 目錄導覽列設置 */
-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* 确保子元素靠下排列 */
-    border-bottom: 1px solid #e1e1e1;
-    margin-top: 55px;
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-}
-
-header nav {
-    margin-top: auto; /* 将 nav 推到 header 的底部 */
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    margin: 0 20px;
-}
-
-/* 目錄title */
 header nav ul li a {
     font-size: 23px; /* 調整字體大小 */
     font-weight: bold; /* 如果你希望文字加粗 */
@@ -35,44 +8,39 @@ header nav ul li a {
 }
 /* 預覽時效果 */
 nav ul li a:hover {
-    background-color: #e2e1e1; /* 當鼠標懸停時，背景顏色變為 #d1d0d0 */
+    background-color: #d9d9d9; /* 當鼠標懸停時，背景顏色變為 #d1d0d0 */
     border-radius: 3px; /* 當鼠標懸停時，設置圓角半徑為 5 像素 */
 }
 
-/* 文章頁設定寬度 */
-main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 5px;
-    border-radius: 8px;
-    padding-bottom: 60px; /* footer的高調整 */
+
+/* 文章標題對應到MD檔案的title */
+header {
+    padding: 40px 0;
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 20px;
 }
 
-.page-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* 底部設定 */
 footer {
-    /* ---固定住指令--- */
     position: fixed;
     bottom: 0;
-    text-align: center;
     width: 100%;
-    /* ---固定住指令--- */
-    padding: 3px 0;
-    background-color: #fcfcfc,0.9;
+    background-color: #fff;
+    z-index: 1000;
+    padding: 10px 0;
     border-top: 1px solid #e1e1e1;
     color: #888;
     font-size: 14px;
-    border-radius: 3px; /* 增加圓角的半徑，使邊角更柔和 */
-    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.1); /* 增加模糊範圍，減少陰影透明度，提升柔和感 */
-
+    text-align: center;
 }
+/* footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #fff;
+    border-top: 1px solid #e1e1e1;
+    margin-top: 30px;
+    color: #888;
+    font-size: 14px;
+} */
 
 footer a {
     color: #3498db;
@@ -196,11 +164,40 @@ li a:hover {
 
 
 
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+
+.page-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 
 a {
     color: #3498db;
     text-decoration: none;
 }
+
+
+/* 文章頁設定寬度 */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 8px;
+}
+
 
 /* 後來加的 */
 br {
