@@ -1,5 +1,5 @@
 ---
-title: "Algorithm & LeetCode (2)"
+title: "Algorithm & LeetCode (1)"
 date: 2024-08-22
 categories: algorithm-leetcode
 ---

@@ -180,6 +180,11 @@ ol li ul li {
     list-style-type: disc; /* 設置黑點樣式 */
     margin-left: 20px;
 }
+ol li ol li {
+    font-size: 18px; /* 調整這裡的字體大小 */
+    list-style-type: disc; /* 設置黑點樣式 */
+    margin-left: 20px;
+}
 
 /* ------------------------------------------------- */
 
