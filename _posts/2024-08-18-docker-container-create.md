@@ -12,28 +12,25 @@ categories: setup-basics
 <!-- 正文 -->
 
 
-### 初次創建 Docker container
-**記得port接口設置超級重要，不然要全部重來!!!**
+### 創建 Container
+去官網下載安裝 Docker，這篇重點就是 **記得設置port接口** ，不然要全部重來!
 
-        #開啟docker
+        #開啟docker、確認資訊
         open -a Docker
-
         docker info
 
-        #下載image&創建docker
+        #下載要使用的image&創建docker
         docker pull "image"
         docker run -it "image"
         docker run -it --name "mycontainer" -p "8080:80" "image"
         (設定名稱、port接口、選擇image)
-
         docker ps
 
         #開始建立container環境(User&SSH)
-
-        docker start "mycontainer"
+        docker start "容器名稱"
 
         #進入容器的terminal
-        docker exec -it "mycontainer" /bin/bash
+        docker exec -it "容器名稱" /bin/bash
 
         #設定新使用者
         adduser newuser
@@ -53,11 +50,10 @@ categories: setup-basics
 
 <br>
 
-### 腳本創建 Docker container
+### 使用腳本創建 Container 
+先準備三個檔案放入同個資料夾，分別是以下[code by Mage](https://lattice.posetmage.com/Tools/OS/Docker/RemoteUbuntu/)
 
-1. 
-  - [code by Mage 點這](https://lattice.posetmage.com/Tools/OS/Docker/RemoteUbuntu/)
-  - 需準備三個檔案放入資料夾
+<br>
 
 #### 1. docker file
 ```bash
@@ -121,8 +117,9 @@ exec "$@"
 ```bash
 ssh key.pub
 ```
+<br>
 
-### 資料夾內執行
+### 在資料夾內執行
 
 ```bash
 #依照dockerFile文本內的環境建立image，創建(自定義)名稱為"ubuntu-ssh"的image。  

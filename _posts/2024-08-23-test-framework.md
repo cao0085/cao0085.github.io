@@ -10,10 +10,10 @@ categories: code-notes
 ### 單元測試 (Unit Testing)
 針對代碼中的最小可測試單元（函數或方法）進行測試，驗證單個單元的功能是否正確。  
 
+<br>
 
-1. Doctest
-  - 測試案例直接嵌入在函數的說明文件中，便於查閱和維護。 
-  - 不需要額外的測試框架或文件，測試案例直接撰寫在 docstring 中。
+#### 1.Doctest
+測試案例直接嵌入在函數的說明文件中，便於查閱和維護，不需要額外的測試框架或文件，測試案例直接撰寫在 docstring 中。
 
 ```python
 def multiply_by_two(x):
@@ -32,10 +32,12 @@ if __name__ == "__main__":
     doctest.testmod()
 ```
 
-2. Unittest
-  - 優點是可以**同時**測試不同變數和情境。
-  - 準備被測試的 A.py 將它導入執行測試的 test_A.py 內進行測試。
-  
+#### 2.Unittest
+優點是可以**同時**測試不同變數和情境...。
+
+<br>
+
+準備兩個檔案(測試和函式)，把函式 A.py 導入執行測試的 test_A.py 內進行測試。  
 ```python 
 # A File
 def function_one(num):
