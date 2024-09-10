@@ -61,7 +61,7 @@ docker-compose ps
         volumes:
           - ./scraper:/app
         working_dir: /app
-        command: bash -c "python scraper.py && tail -f /dev/null"
+        command: bash -c "pip install mysql-connector-python && python scraper.py && tail -f /dev/null"
         ports:
           - "7002:7002"
         depends_on:
@@ -104,7 +104,7 @@ docker-compose ps
       └── app.py
   ```
 
-
+  for local curl to MySQL
   ```python 
   from flask import Flask, request, jsonify
   import mysql.connector
@@ -142,7 +142,47 @@ docker-compose ps
       app.run(host='0.0.0.0', port=80)
 
   ```
+  
+  scrap to MySQL
+  ```python
+  import mysql.connector
 
+  # 設定 MySQL 連接
+  db = mysql.connector.connect(
+      host="mysql",  # 使用 Docker Compose 中服務的名稱 "mysql"
+      user="root",
+      password="0000"
+  )
+
+  cursor = db.cursor()
+
+  # 建立資料庫
+  cursor.execute("CREATE DATABASE IF NOT EXISTS db_20240904;")
+  cursor.execute("USE db_20240904;")
+
+  # 建立表格
+  cursor.execute("""
+  CREATE TABLE IF NOT EXISTS test1 (
+      id INT,
+      value CHAR(1)
+  );
+  """)
+
+  # 插入資料
+  data = [
+      (1, 'a'),
+      (2, 'b')
+  ]
+
+  cursor.executemany("INSERT INTO test1 (id, value) VALUES (%s, %s);", data)
+  db.commit()
+
+  print("Database and table created, data inserted successfully.")
+
+  # 關閉 cursor 和資料庫連接
+  cursor.close()
+  db.close()
+  ```
 
 <br>
 
@@ -189,13 +229,15 @@ docker-compose ps
  
 
 - 流程
+  - 使用前重啟 Docker Compose
   - 本地request -> Docker Compose 內部處理轉換資訊 -> respones給本地
+  
 
   <br>
 
   1. Local Send Http Requests：
   ```bash
-  curl -X POST http://localhost:7003/query -d "query=CREATE TABLE ...."
+  curl -X POST http://localhost:7003/query -d "query=SELECT * FROM db_20240904.test1;"
   ```
     - 在本地終端使用 `curl` 發送 HTTP POST 請求給 api container (port：7003:80)。
 
