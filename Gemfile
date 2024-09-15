@@ -37,3 +37,5 @@ gem 'jekyll-admin', group: :jekyll_plugins
 
 gem "webrick", "~> 1.8"
 gem "rack", "~> 2.2"
+
+gem 'jekyll-sitemap'

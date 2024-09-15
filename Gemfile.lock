@@ -348,6 +348,7 @@ DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll-admin
   jekyll-feed (~> 0.12)
+  jekyll-sitemap
   minima (~> 2.5)
   rack (~> 2.2)
   tzinfo (>= 1, < 3)
