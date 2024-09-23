@@ -1,0 +1,246 @@
+/* 整體環境 */
+body {
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* 文章頁設定寬度 */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 8px;
+    padding-bottom: 60px; /* footer的高度調整 */
+}
+
+.page-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 底部設定 */
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    padding: 3px 0;
+    background-color: rgba(252, 252, 252, 0.9);
+    border-top: 1px solid #e1e1e1;
+    color: #888;
+    font-size: 14px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: #3498db;
+}
+
+/* 標題樣式調整 */
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+h4 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+h6 {
+    font-size: 18px;
+    color: #757575;
+    border-left: 4px solid #e0e0e0;
+    padding-left: 15px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    background-color: #f7f7f7;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+}
+
+/* 文章段落文字設定 */
+p {
+    margin: 3px;
+    padding-left: 15px;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+}
+
+/* 全局 li 標籤樣式 */
+ol, ul {
+    margin-left: 20px;
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+/* 調整 li 樣式，使其與 p 的行距一致 */
+ol > li, ul > li {
+    font-size: 18px;
+    margin: 3px 0; /* 調整上、下間距與 <p> 一致 */
+    padding: 0;
+    line-height: 1.7; /* 與 <p> 的行距保持一致 */
+}
+
+ul > li > a {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3498db;
+}
+
+/* 第二層列表樣式 */
+ol li ul li, ul li ul li {
+    font-size: 16px;
+    list-style-type: disc;
+    margin-left: 25px;
+}
+
+ol li ol li {
+    font-size: 16px;
+    list-style-type: decimal;
+    margin-left: 25px;
+}
+
+ul li a:hover {
+    color: #000;
+}
+
+/* 第三層列表樣式 */
+ol li ul li ul li, ul li ul li ul li {
+    font-size: 14px;
+    list-style-type: disc;
+    margin-left: 30px;
+}
+
+ol li ol li ul li {
+    font-size: 14px;
+    list-style-type: disc;
+    margin-left: 30px;
+}
+
+/* 連結 hover 效果 */
+li a:hover {
+    color: #000;
+}
+
+/* 修正 ul 項目的樣式 */
+ul {
+    list-style-type: none;
+}
+
+/* 頁面導覽設定 */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-bottom: 1px solid #e1e1e1;
+    margin-top: 55px;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+header nav {
+    margin-top: auto;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    font-size: 23px;
+    font-weight: bold;
+    color: #282828;
+    padding: 10px 15px;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+nav ul li a:hover {
+    background-color: #e2e1e1;
+    border-radius: 3px;
+}
+
+/* 連結設定 */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+/* 調整 br 行高 */
+br {
+    line-height: 1.2;
+    margin: 1.5px;
+}
+
+/* 程式碼區域樣式 */
+pre {
+    background-color: rgba(210, 209, 209, 0.8);
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    margin: 20px;
+}
+
+pre code {
+    font-family: 'Menlo', 'Inconsolata', monospace;
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* 註解樣式 */
+pre code .c1 {
+    color: #738395;
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* 分隔線樣式 */
+hr {
+    border: none;
+    border-top: 1.5px solid #cccccc;
+    opacity: 0.5;
+    margin: 50px 5px 25px 5px;
+}
+
+/* 粗體字 */
+strong {
+    font-weight: 800 !important;
+    display: inline-block;
+}
