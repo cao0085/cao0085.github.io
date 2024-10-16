@@ -1,5 +1,5 @@
 ---
-title: "How to Install Jekyll with ChatGPT"
+title: "Install Jekyll with ChatGPT"
 date: 2024-08-07
 categories: setup-basics
 # algorithm-leetcode
@@ -11,27 +11,18 @@ categories: setup-basics
 
 <!-- 正文 -->
 
-## 前言
-
-首次安裝時順順下指令給ChatGPT就成功，後來刪除到Jeykll生成某些檔案無法正常開啟。重新安裝就遇到很多障礙，弄了三個小時後冷靜下來才成功。在操作安裝前想先模擬一個情境，分享目前對於使用ChatGPT的理解，看能不能讓和我一樣的初學者有共感。
-
-###### 情境：今天你是一位B2B的Sales。<br>1.我需要詢問客戶需求（解決Jekyll的安裝問題）、目前有上有什麼資源（Ruby、Bundler）<br>2.把客戶的資訊(解決安裝問題、有什麼版本的Ruby、Bundler)回報給公司技術團隊(ChatGPT)<br>3.挑選團隊(ChatGPT)提供的可執行方案給客戶(Terminal)。<br>4.執行上若出現問題(Error)就需要當作中間的橋樑(貼給ChatGPT)。<br>5.若還是無法解決就找外部資源(Youtube、Stack Overflow)。
-
-
-
 ### 開始安裝
 
-Jekyll 是使用 Ruby 編寫的網站生成器，須先安裝**Ruby**、**Bundler** (用於安裝和管理 Jekyll 及其依賴的gems)。若是有下載過**先確認！先確認！！目前電腦內的 Ruby、Bundler的版本**，我犯下最大的錯誤就是沒有意識到 Ruby、Bundler、Jekyll 有版本相容性的問題，導致後來ChatGPT在幫我debug時回答的環境錯亂。
+Jekyll 是使用 Ruby 編寫的網站生成器，須先安裝**Ruby**、**Bundler** (用於安裝和管理 Jekyll 及其依賴的gems)。若是有下載過先確認目前電腦內的 Ruby、Bundler的版本，這次安裝我犯的錯就是不知道 Ruby、Bundler、Jekyll 有版本相容性的問題，導致詢問ChatGPT時鬼打牆。
 
 
-- 問題
+- 此次的問題
   1. 我使用Mac M1，我要下載哪個版本的Ruby、Bundler?
   2. 把安裝好的 ruby ＆ bundler (Terminal回覆的)版本列出來，重複詢問是否相容？  
   3. 一樣把ruby ＆ bundler 版本寫出來 + "我要該安裝什麼版本的Jekyll"？
   4. gem install jekyll version
 
-順利的話到這就安裝完成但是...，但是因為我是重新安裝有刪除過部分檔案的問題就延伸出以下：
-"嘗試加載 Jekyll 相關的 Ruby gem 時出現了問題。具體來說，錯誤涉及到 google-protobuf 和 sass-embedded gem"  
+順利的話到這就安裝完成，但是我因為手賤亂動檔案就要重新安裝！  
 
 <br>
 
@@ -80,9 +71,7 @@ Jekyll 是使用 Ruby 編寫的網站生成器，須先安裝**Ruby**、**Bundle
 <br>
 
 ### 總結
-- 這次安裝就是不停的：  
- 1. 重複敘述目前環境給ChatGPT
- 2. 挑選執行方案  
- 3. 把error貼回ChatGPT解決
+1.學習安裝框架，理解事前準備與環境的重要性  
+2.和 GPT 該怎麼交流，有意識的挑戰它
 
 <br>

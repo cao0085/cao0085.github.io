@@ -192,3 +192,129 @@ class Solution:
 ***
 
 #### [1353. Maximum Number of Events That Can Be Attended](https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/description/)  
+
+```python
+import heapq
+
+class Solution(object):
+    def maxEvents(self, events):
+        """
+        :type events: List[List[int]]
+        :rtype: int
+        """
+        # Sort events by their start day
+        events.sort()
+        
+        heap = []  # Min-heap to store the end days of ongoing events
+        day = 0    # Current day
+        event_count = 0  # Number of events attended
+        i = 0  # Pointer for the events list
+        n = len(events)
+        
+        # Iterate through all the days, from the first start day to the last possible end day
+        while heap or i < n:
+            # If the heap is empty, move the day forward to the next event's start day
+            if not heap:
+                day = events[i][0]
+            
+            # Add all events starting on the current day to the heap
+            while i < n and events[i][0] <= day:
+                heapq.heappush(heap, events[i][1])  # Push the event's end day into the heap
+                i += 1
+            
+            # Remove events from the heap that have already ended (end day < current day)
+            while heap and heap[0] < day:
+                heapq.heappop(heap)
+            
+            # Attend the event that ends the earliest (smallest end day)
+            if heap:
+                heapq.heappop(heap)
+                event_count += 1
+            
+            # Move to the next day
+            day += 1
+        
+        return event_count
+```
+
+***
+
+#### [1405. Longest Happy String](https://leetcode.com/problems/longest-happy-string/description/)
+要獲得最佳解就是建立 Max Heap 取出目前庫存最大的字母排列，若遇到連續第三次就換字母。
+
+```python
+import heapq
+
+def longest_happy_string(a: int, b: int, c: int) -> str:
+    # Use a max heap to track remaining counts of 'a', 'b', 'c'
+    heap = []
+    if a > 0:
+        heapq.heappush(heap, (-a, 'a'))
+    if b > 0:
+        heapq.heappush(heap, (-b, 'b'))
+    if c > 0:
+        heapq.heappush(heap, (-c, 'c'))
+
+    result = []
+
+    while heap:
+        # Pop the character with the most remaining occurrences
+        first_count, first_char = heapq.heappop(heap)
+        
+        # Check if adding this character would create three in a row
+        if len(result) >= 2 and result[-1] == result[-2] == first_char:
+            if not heap:
+                break  # No other characters to use, end loop
+            # Use the second most frequent character
+            second_count, second_char = heapq.heappop(heap)
+            result.append(second_char)
+            second_count += 1  # Decrease its remaining count
+            if second_count < 0:
+                heapq.heappush(heap, (second_count, second_char))
+            # Push the first character back for later use
+            heapq.heappush(heap, (first_count, first_char))
+        else:
+            # Use the most frequent character
+            result.append(first_char)
+            first_count += 1  # Decrease its remaining count
+            if first_count < 0:
+                heapq.heappush(heap, (first_count, first_char))
+
+    return ''.join(result)
+```
+
+---
+#### [1508. Range Sum of Sorted Subarray Sums](https://leetcode.com/problems/range-sum-of-sorted-subarray-sums/description/)
+題目是要把每個可能的和列出來，並依照值排列再用題目給的 Index 算出和。  
+解題邏輯是：建立 Order List & Min Heap 。初始化把當前的 List 值做成 (sum_value,leaf,right) 放入 Heap，每次從 Heap 取出最小值放入 List ，添加一個 (sum_value,leaf,right+1) 進入 heap。
+
+```python
+import heapq
+
+def range_sum(nums, n, left, right):
+    mod = 10**9 + 7
+    heap = []
+    
+    # Initialize heap with single elements from nums
+    for i in range(n):
+        heapq.heappush(heap, (nums[i], i, i))  # (sum, start index, end index)
+
+    total_sum = 0
+    count = 0
+    
+    # Extract up to 'right' sums from the heap
+    while count < right:
+        current_sum, start, end = heapq.heappop(heap)
+        count += 1
+        
+        # If within the range [left, right], add to total_sum
+        if count >= left:
+            total_sum = (total_sum + current_sum) % mod
+        
+        # If the subarray can be extended, calculate the new sum and push to heap
+        if end + 1 < n:
+            new_sum = current_sum + nums[end + 1]
+            heapq.heappush(heap, (new_sum, start, end + 1))
+    
+    return total_sum
+```

@@ -7,7 +7,7 @@ categories: code-notes
 # setup-basics
 ---
 <!-- 大綱引言 -->
-###### 了解 JAVA 的資料結構型態
+###### 之前只學過 Python JS應用，讀 JAVA Leetcode 有點障礙，了解一下 JAVA 的資料結構型態
 
 <!-- 正文 -->
 

@@ -1,5 +1,5 @@
 ---
-title: "Docker Compose"
+title: "Docker (4) - Docker Compose"
 date: 2024-09-02
 categories: setup-basics
 # algorithm-leetcode
@@ -7,7 +7,7 @@ categories: setup-basics
 # setup-basics
 ---
 <!-- 大綱引言 -->
-###### Defining & Running multi-container Docker applications。 <br>使用 Docker Compose 來模擬一個輸入出 MySQL 的環境。
+###### 使用 Docker Compose 一次建立多個 Container，並利用不同的容器功能模擬實際的資訊傳遞。
 
 
 
@@ -36,18 +36,18 @@ docker-compose ps
 
 <br>
 
-### 專案框架
+### 練習框架
 
-- 需求
-  - 使用 Python 進行網頁爬蟲，抓取所需數據。
-  - 將抓取到的數據匯入 MySQL 伺服器。
-  - 透過外部指令（例如：curl 和查詢語句）來推送和接收 MySQL 資料。
+- 3個需求3個容器
+  - web_scraper: 使用 Python 進行網頁爬蟲，抓取所需數據。
+  - mysql: 將抓取到的數據匯入 MySQL 伺服器。
+  - api_service: 透過外部指令（例如：curl 和查詢語句）來推送和接收 MySQL 資料。
 
 <br>
 
 
 - 1.建立 .yaml
-  - 用能夠自動帶入檔案名稱：docker-compose.yml
+  - 用可預設執行的檔案名稱：docker-compose.yml
   - 此次只為了驗證流程和功能性，容器無需安裝完整的依賴。
   - port 先設置在 7000 到 7500 範圍內，避免衝突問題。
 
@@ -217,7 +217,7 @@ docker-compose ps
     - 使用 MySQL 的原生二進制協議進行通信，這是最常用的方式。MySQL 客戶端（如 `mysql` 命令行工具）和各種程式語言的 MySQL 驅動程序（如 Python 的 `mysql-connector-python` 或 PHP 的 `mysqli`）。
 
   2. HTTP/JSON 接口（需中間層）：
-    - MySQL 本身不直接支持 HTTP 協議，但是可以使用中間層服務（如 PHP、Python 的 Flask/Django 等 Web 框架）通過 HTTP 接口接收請求，然後將這些請求轉換為 MySQL 查詢。這樣就可以通過 HTTP/JSON 的方式間接與 MySQL 進行交互。
+    - MySQL 本身不直接支持 HTTP 協議，但是可以使用中間層服務（如 PHP、Python 的 Flask/Django 等 Web 框架）通過 HTTP 接口接收請求，然後將這些請求轉換為 MySQL 指令。這樣就可以通過 HTTP/JSON 的方式間接與 MySQL 進行交互。
 
   3. ODBC（Open Database Connectivity）：
     - 通過 ODBC 驅動程序與 MySQL 通信。這種方法主要用於需要與不同類型數據庫進行互操作的應用程序，例如在 Windows 環境中通過 ODBC 驅動器進行資料庫連接。
@@ -264,4 +264,5 @@ docker-compose ps
 <br>
 
 ### 總結
-目前都是簡單設置資料傳輸的部分，初步瞭解必要項目、確認整個流程沒有問題。
+1. 因為 docker compose 是一次啟動所有容器，各別的容器啟動後會各自執行任務。所以容器間有依賴關係時可能會有問題（SQL伺服器還沒有架好，API就傳送請求 ）。
+2. Scrap 那邊應該要透過 API 進 SQL 而不是直接引用 Python 設計的 SQL Function 抓進去。

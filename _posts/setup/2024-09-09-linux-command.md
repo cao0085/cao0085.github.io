@@ -1,5 +1,5 @@
 ---
-title: "Linux Commands"
+title: "Bash Shell Commands"
 date: 2024-09-09
 categories: setup-basics
 # algorithm-leetcode
@@ -7,7 +7,7 @@ categories: setup-basics
 # setup-basics
 ---
 <!-- 大綱引言 -->
-###### Dockerfile 經常會需要使用到 Linux 指令。記錄一下經常用到的重要 Linux 指令。
+###### 開始會需要使用到指令除錯或是找問題了QQ，紀錄一下～
 
 
 
@@ -212,4 +212,5 @@ curl -O https://example.com/file.zip
 
 ---
 
-日後隨時補充
+### 總結
+1. 結果還是要碰到這個黑黑白白的視窗。

@@ -112,7 +112,7 @@ ol > li, ul > li {
 ul > li > a {
     font-size: 20px;
     font-weight: bold;
-    color: #3498db;
+    color: #333;
 }
 
 /* 第二層列表樣式 */
@@ -244,3 +244,4 @@ strong {
     font-weight: 800 !important;
     display: inline-block;
 }
+

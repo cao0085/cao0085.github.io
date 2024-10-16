@@ -1,5 +1,5 @@
 ---
-title: "Basic Scrapy Setup with Docker Compose (2)"
+title: "Docker (5) - Scrapy Setup with Dockerfile"
 date: 2024-09-10
 categories: setup-basics
 # algorithm-leetcode
@@ -7,13 +7,13 @@ categories: setup-basics
 # setup-basics
 ---
 <!-- 大綱引言 -->
-######  添加一個定時執行爬蟲的功能，並嘗試用 dockerfile 做 docker-compose
+######  在之前的爬蟲中添加一個定時功能，並嘗試用 dockerfile 做 docker-compose (親寫)
 
 <!-- 正文 -->
 
 ### 前言
 
-這次的目標是添加一個定時執行爬蟲的功能，需要釐清哪些 Cron 指令應該寫在 Dockerfile 裡，哪些應該放在 `docker-compose.yml` 裡，實際操作起來比預想的困難。我的流程是先建立並測試一個 Dockerfile，然後讓 Docker Compose 使用這個 Dockerfile 作為基礎來運行容器。
+目標是實踐 Container 建立起來後 Cron 自動執行爬蟲，需要釐清哪些 Cron 指令應該寫在 Dockerfile 裡，哪些應該放在 `docker-compose.yml` 裡、docekrfile 包在 Image 中和 CMD 相互覆蓋等等的問題。  
 
 <br>
 
@@ -171,8 +171,6 @@ volumes:
 
 ### 結語
 
-這次算是我第一次寫所需的環境參數，過程中熟悉 Linux command 、哪些指令放在 entrypoint.sh 哪些寫在 Dockerfile or docker-compose.yml。  
-
-<br>  
-
-另外還有" Docker Compose 初次啟動時，MySQL 服務尚未完全啟動，API 和 Python 程序就已經開始運行並嘗試連接數據庫導致連接失敗" 這個問題未解決。
+1. 這次算是我第一次寫所需的環境參數，過程中熟悉滿多 command 、哪些指令放在 entrypoint.sh 哪些寫在 Dockerfile or docker-compose.yml CMD。  
+2. 高度自動化比想像複雜很多。
+3. 另外還有" Docker Compose 初次啟動時，MySQL 服務尚未完全啟動，API 和 Python 程序就已經開始運行並嘗試連接數據庫導致連接失敗" 這個問題未解決。

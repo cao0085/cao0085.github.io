@@ -1,5 +1,5 @@
 ---
-title: "Connecting to MySQL in Docker"
+title: "Docker (3) - Connecting to MySQL in Docker"
 date: 2024-08-29
 categories: setup-basics
 # algorithm-leetcode
@@ -7,14 +7,10 @@ categories: setup-basics
 # setup-basics
 ---
 <!-- 大綱引言 -->
-###### 透過SSH隧道讓本地電腦對 Container's MySQL 下指令!
+###### 透過SSH隧道讓本地電腦對 MySQL Container 下指令，嘗試模擬伺服器之間傳遞資訊。<br>*Local -> Container -> Container's MySQL Server
 
 
 <!-- 正文 -->
-
-總共需要使用3個不同的 Terminal 窗口完成。  
-containers是使用Ubantu+SSH為基底
-(PORTS ：.0.0.0:5566->22/tcp)
 
 <br>
 
@@ -48,4 +44,4 @@ local port 3307 -> Docker container’s port 5566 (SSH) -> MySQL port 3306
 
 ### 結論
 
-這是遇到的問題都滿好解決，就是把port的位置紀錄好。
+1. 了解基本的資訊傳遞、遠端操作

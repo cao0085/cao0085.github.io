@@ -1,5 +1,5 @@
 ---
-title: "Docker & Container"
+title: "Docker (1) - Docker & Container"
 date: 2024-08-18
 categories: setup-basics
 # algorithm-leetcode
@@ -7,13 +7,19 @@ categories: setup-basics
 # setup-basics
 ---
 <!-- 大綱引言 -->
-###### Docker 是一個容器化平台，允許開發者將應用程式及其依賴項打包到可移植的container中，確保在不同環境下的運行一致性。它提供了輕量級的虛擬化，讓應用程式在同一台機器上彼此隔離地運行。<br>Container 是一種虛擬化技術，提供應用程式隔離的運行環境，包含所有運行所需的資源，確保應用程式能在任何環境中一致運行。
+###### 酷東西，稍微會用之後很方便！
 
 <!-- 正文 -->
 
+### Docker
+Docker 是一個容器化平台，允許開發者將應用程式及其依賴項打包到container中，確保在不同環境下的運行一致性。它提供了輕量級的虛擬化，讓應用程式在同一台機器上彼此隔離地運行。<br>Container 是一種虛擬化技術，提供應用程式隔離的運行環境，包含所有運行所需的資源，確保應用程式能在任何環境中一致運行。
 
-### 創建 Container
-去官網下載安裝 Docker，這篇重點就是 **記得設置port接口** ，不然要全部重來!
+### 創建第一個 Container
+下載安裝 Docker Desktop，創建 Container 的方法就是下載 Image 檔案 (可自定義或是使用官方提供)、輸入一些自訂參數後執行， 有些設定需要在建立 Container 當下就先設置好，有些可以建立完畢再做設定。  
+
+<br>
+  
+*這次練習為進入容器內創建使用者，並執行SSH連線。  
 
         #開啟docker、確認資訊
         open -a Docker
@@ -51,7 +57,8 @@ categories: setup-basics
 <br>
 
 ### 使用腳本創建 Container 
-先準備三個檔案放入同個資料夾，分別是以下[code by Mage](https://lattice.posetmage.com/Tools/OS/Docker/RemoteUbuntu/)
+剛剛的流程是一步一步操作，這邊是自動化流程，最終目的可以想成一鍵執行  
+先準備三個檔案放入同個資料夾，分別是以下3個檔案。[code by Mage](https://lattice.posetmage.com/Tools/OS/Docker/RemoteUbuntu/)
 
 <br>
 

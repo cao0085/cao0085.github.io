@@ -1,5 +1,5 @@
 ---
-title: "Docker File Basics"
+title: "Docker (2) - Docker File Basics"
 date: 2024-08-27
 categories: 
 # algorithm-leetcode
@@ -7,9 +7,14 @@ categories:
 # setup-basics
 ---
 <!-- 大綱引言 -->
-###### 寫一個基本功能的 DockerFile，以 SQL 為例。
+###### 初寫一個基本功能的 DockerFile，以 SQL 為例。
 
 <!-- 正文 -->
+
+### Dockerfile
+Dockerfile 是建立一個自定義的 Image ，本質是選一個 官方 Image +  你想要的 Default Setting 包在裡面，在執行 build 的時候就可以生成符合需求的容器。
+
+
 
 ### 基本設置
 - 建立優先順序

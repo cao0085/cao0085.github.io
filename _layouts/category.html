@@ -6,7 +6,7 @@ layout: default
   <br>
   {% for post in site.categories[page.category] %}
     <li style="margin-bottom: 20px;">
-      <a href="{{ post.url | relative_url }}" style="font-size: 25px; font-weight: bold; display: block;">
+      <a href="{{ post.url | relative_url }} "style="font-size: 25px; font-weight: bold; display: block; ;">
         {{ post.title }}
       </a>
       <span style="font-size: 14px; color: #888; display: block; margin-top: 2px;">
@@ -14,4 +14,6 @@ layout: default
       </span>
     </li>
   {% endfor %}
-  </ul>
+ </ul>
+
+
