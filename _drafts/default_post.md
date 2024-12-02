@@ -1,8 +1,7 @@
 ---
-title: "-"
-date: 2024-08-23
+title: "Music Notion（一）：環境配置＆架構"
+date: 2024-
 categories: 
-layout: posts-use
 # algorithm-leetcode
 # code-notes
 # setup-basics
